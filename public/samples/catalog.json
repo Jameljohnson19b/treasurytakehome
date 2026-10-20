@@ -1,0 +1,164 @@
+{
+  "samples": [
+    {
+      "id": "perfect",
+      "title": "Correct bourbon label",
+      "description": "Every field matches, including the required warning.",
+      "filename": "01-perfect.png",
+      "expected_verdict": "APPROVE",
+      "application": {
+        "brand_name": "OLD TOM DISTILLERY",
+        "class_type": "Kentucky Straight Bourbon Whiskey",
+        "alcohol_content": "45% Alc./Vol. (90 Proof)",
+        "net_contents": "750 mL",
+        "producer_address": "Old Tom Distillery, 100 Distillery Lane, Louisville, KY 40202",
+        "country_of_origin": "United States",
+        "is_import": false
+      }
+    },
+    {
+      "id": "brand-case",
+      "title": "Brand is in all caps",
+      "description": "The label says STONE'S THROW and the application says Stone's Throw.",
+      "filename": "02-brand-case.png",
+      "expected_verdict": "NEEDS_REVIEW",
+      "application": {
+        "brand_name": "Stone's Throw",
+        "class_type": "Kentucky Straight Bourbon Whiskey",
+        "alcohol_content": "45% Alc./Vol. (90 Proof)",
+        "net_contents": "750 mL",
+        "producer_address": "Stone's Throw Distillery, 100 River Road, Seattle, WA 98101",
+        "country_of_origin": "United States",
+        "is_import": false
+      }
+    },
+    {
+      "id": "wrong-abv",
+      "title": "Alcohol is off by a point",
+      "description": "The label says 46% and the application says 45%.",
+      "filename": "03-wrong-abv.png",
+      "expected_verdict": "REJECT",
+      "application": {
+        "brand_name": "OLD TOM DISTILLERY",
+        "class_type": "Kentucky Straight Bourbon Whiskey",
+        "alcohol_content": "45% Alc./Vol. (90 Proof)",
+        "net_contents": "750 mL",
+        "producer_address": "Old Tom Distillery, 100 Distillery Lane, Louisville, KY 40202",
+        "country_of_origin": "United States",
+        "is_import": false
+      }
+    },
+    {
+      "id": "centiliters",
+      "title": "Volume in centiliters",
+      "description": "75 cL is the same amount as 750 mL.",
+      "filename": "04-centiliters.png",
+      "expected_verdict": "APPROVE",
+      "application": {
+        "brand_name": "OLD TOM DISTILLERY",
+        "class_type": "Kentucky Straight Bourbon Whiskey",
+        "alcohol_content": "45% Alc./Vol. (90 Proof)",
+        "net_contents": "750 mL",
+        "producer_address": "Old Tom Distillery, 100 Distillery Lane, Louisville, KY 40202",
+        "country_of_origin": "United States",
+        "is_import": false
+      }
+    },
+    {
+      "id": "proof",
+      "title": "Proof instead of percent",
+      "description": "The label shows 90 proof. The application says 45% ABV.",
+      "filename": "05-proof.png",
+      "expected_verdict": "APPROVE",
+      "application": {
+        "brand_name": "OLD TOM DISTILLERY",
+        "class_type": "Kentucky Straight Bourbon Whiskey",
+        "alcohol_content": "45% ABV",
+        "net_contents": "750 mL",
+        "producer_address": "Old Tom Distillery, 100 Distillery Lane, Louisville, KY 40202",
+        "country_of_origin": "United States",
+        "is_import": false
+      }
+    },
+    {
+      "id": "warning-case",
+      "title": "Warning not in all caps",
+      "description": "The header says Government Warning instead of GOVERNMENT WARNING.",
+      "filename": "06-warning-case.png",
+      "expected_verdict": "REJECT",
+      "application": {
+        "brand_name": "OLD TOM DISTILLERY",
+        "class_type": "Kentucky Straight Bourbon Whiskey",
+        "alcohol_content": "45% Alc./Vol. (90 Proof)",
+        "net_contents": "750 mL",
+        "producer_address": "Old Tom Distillery, 100 Distillery Lane, Louisville, KY 40202",
+        "country_of_origin": "United States",
+        "is_import": false
+      }
+    },
+    {
+      "id": "warning-wording",
+      "title": "Warning wording changed",
+      "description": "The required statement was rewritten.",
+      "filename": "07-warning-wording.png",
+      "expected_verdict": "REJECT",
+      "application": {
+        "brand_name": "OLD TOM DISTILLERY",
+        "class_type": "Kentucky Straight Bourbon Whiskey",
+        "alcohol_content": "45% Alc./Vol. (90 Proof)",
+        "net_contents": "750 mL",
+        "producer_address": "Old Tom Distillery, 100 Distillery Lane, Louisville, KY 40202",
+        "country_of_origin": "United States",
+        "is_import": false
+      }
+    },
+    {
+      "id": "glare",
+      "title": "Washed-out photo",
+      "description": "The picture is too light to read. The tool should ask for another photo.",
+      "filename": "08-glare.png",
+      "expected_verdict": "NEEDS_REVIEW",
+      "application": {
+        "brand_name": "OLD TOM DISTILLERY",
+        "class_type": "Kentucky Straight Bourbon Whiskey",
+        "alcohol_content": "45% Alc./Vol. (90 Proof)",
+        "net_contents": "750 mL",
+        "producer_address": "Old Tom Distillery, 100 Distillery Lane, Louisville, KY 40202",
+        "country_of_origin": "United States",
+        "is_import": false
+      }
+    },
+    {
+      "id": "angled",
+      "title": "Crooked photo",
+      "description": "The bottle was photographed at an angle.",
+      "filename": "09-angled.png",
+      "expected_verdict": "APPROVE",
+      "application": {
+        "brand_name": "OLD TOM DISTILLERY",
+        "class_type": "Kentucky Straight Bourbon Whiskey",
+        "alcohol_content": "45% Alc./Vol. (90 Proof)",
+        "net_contents": "750 mL",
+        "producer_address": "Old Tom Distillery, 100 Distillery Lane, Louisville, KY 40202",
+        "country_of_origin": "United States",
+        "is_import": false
+      }
+    },
+    {
+      "id": "missing-warning",
+      "title": "Warning missing",
+      "description": "The government warning is not on the label.",
+      "filename": "10-missing-warning.png",
+      "expected_verdict": "REJECT",
+      "application": {
+        "brand_name": "OLD TOM DISTILLERY",
+        "class_type": "Kentucky Straight Bourbon Whiskey",
+        "alcohol_content": "45% Alc./Vol. (90 Proof)",
+        "net_contents": "750 mL",
+        "producer_address": "Old Tom Distillery, 100 Distillery Lane, Louisville, KY 40202",
+        "country_of_origin": "United States",
+        "is_import": false
+      }
+    }
+  ]
+}

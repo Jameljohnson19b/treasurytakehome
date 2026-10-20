@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.venv
+__pycache__
+.pytest_cache
+*.pyc
+data/uploads
+public/ocr/worker.min.js
+public/ocr/*.wasm.js
+public/ocr/*.map
+.DS_Store
+tsconfig.tsbuildinfo
+.vercel
